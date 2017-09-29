@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:wicket="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Users List</title>
+</head>
+<body>
+<wicket:extend>
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+            </div>
+            <div class="col-sm-8 text-center">
+                <form wicket:id="lookUpForm" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" wicket:id="lookUpField" placeholder="Enter last name for search"
+                               pattern="[\w]+" required title="Request should contain at least one letter"
+                               class="form-control">
+                        <input type="submit" value="SEARCH" class="btn btn-info">
+                    </div>
+                </form>
+                <form wicket:id="mainForm">
+                    <div style="padding: 5% 0 5% 20%">
+                        <table class="table-condensed table-bordered">
+                            <tr>
+                                <th>ID</th>
+                                <th>Login</th>
+                                <th>Email</th>
+                                <th>First name</th>
+                                <th>Last name</th>
+                                <th>Delete</th>
+                                <th>Update</th>
+                            </tr>
+                            <tr wicket:id="paddingDataView">
+                                <td><span wicket:id="userId">[userID]</span> </td>
+                                <td><span wicket:id="userLogin">[userLogin]</span></td>
+                                <td><span wicket:id="userEmail">[userEmail]</span></td>
+                                <td><span wicket:id="userFirstName">[userFirstName]</span></td>
+                                <td><span wicket:id="userLastName">[userLastName]</span></td>
+                                <td><span wicket:id="remove">[remove]</span></td>
+                                <td><span wicket:id="update">[remove]</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <form id="userCreation" wicket:id="userCreation" method="post">
+                        <a wicket:id="showModalLink" class="btn btn-primary active">Create new User</a>
+                    </form>
+                    <div wicket:id="navigator" class="pagination pager">[dataview navigator]</div>
+                    <div wicket:id="create"></div>
+                </form>
+            </div>
+            <div class="col-sm-2 sidenav">
+            </div>
+        </div>
+    </div>
+</wicket:extend>
+</body>
+</html>

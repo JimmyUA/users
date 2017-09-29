@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:wicket="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update User</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+          crossorigin="anonymous">
+</head>
+<body>
+<wicket:extend>
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+            </div>
+            <div class="col-sm-8 text-center">
+                <h2 wicket:id="updateLabel">message here</h2>
+                <form id="createForm" method="post" wicket:id="updateForm" class="form-horizontal"
+                    style="padding: 10% 0 10% 0">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Email:</label>
+                        <div class="col-sm-10">
+                            <input type="email" placeholder="Enter user e-mail"
+                                   title="Enter new user e-mail address"
+                                   pattern="^([\\w-.]+){1,64}@([\\w&&[^_]]+){2,255}.[a-z]{2,}$"
+                                   wicket:id="email" class="form-control"/>
+                        </div>
+                        <label class="control-label col-sm-2">First name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" placeholder="Enter new user's first name"
+                                   wicket:id="firstName" class="form-control"/>
+                        </div>
+                        <label class="control-label col-sm-2">Last name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" placeholder="Enter new user's last name"
+                                   wicket:id="lastName" class="form-control"/>
+                        </div>
+                    </div>
+                        <input type="submit" value="UPDATE" id="submit" class="btn btn-primary active">
+                        <input wicket:id="cancelButton" type="submit" value="CANCEL" class="btn btn-primary active">
+                </form>
+                <div class="col-sm-2 sidenav">
+                </div>
+            </div>
+        </div>
+    </div>
+</wicket:extend>
+</body>
+</html>

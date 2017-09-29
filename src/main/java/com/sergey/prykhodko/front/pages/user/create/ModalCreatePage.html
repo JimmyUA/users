@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:wicket="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Cteare user</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container-fluid text-center">
+    <div class="row content">
+        <h2 wicket:id="createLabel" style="padding-left: 15%">message here</h2>
+        <form id="createForm" method="post" wicket:id="createForm" class="form-horizontal"
+              style="padding: 10%">
+
+            <div class="form-group" style="display: flex">
+                <label class="control-label col-sm-4">Login:</label>
+                <div class="col-sm-10">
+                    <input type="text" placeholder="Chose login"
+                           title="Should be longer than 3 letters"
+                           required pattern="^[A-Za-z0-9_]{3,25}$"
+                           wicket:id="login" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group" style="display: flex">
+                <label class="control-label col-sm-4">Password:</label>
+                <div class="col-sm-10">
+                    <input type="password" placeholder="Chose password" required
+                           title="Password should have minimum 8 letters and minimum one number"
+                           pattern="^((?=.*\d)[A-Za-z\d]{8,}$"
+                           wicket:id="password" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group" style="display: flex">
+                <label class="control-label col-sm-4">Email:</label>
+                <div class="col-sm-10">
+                    <input type="email" placeholder="Enter user e-mail"
+                           required title="Enter user e-mail address"
+                           pattern="^([\\w-.]+){1,64}@([\\w&&[^_]]+){2,255}.[a-z]{2,}$"
+                           wicket:id="email" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group" style="display: flex">
+                <label class="control-label col-sm-4">First name:</label>
+                <div class="col-sm-10">
+                    <input type="text" placeholder="Enter user's first name" required
+                           wicket:id="firstName" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group" style="display: flex">
+                <label class="control-label col-sm-4">Last name:</label>
+                <div class="col-sm-10"><input type="text" placeholder="Enter user's last name" required
+                                             wicket:id="lastName" class="form-control"/>
+                </div>
+            </div>
+            <input type="submit" value="CREATE" id="submit" class="btn btn-primary active">
+        </form>
+    </div>
+</div>
+</body>
+</html>

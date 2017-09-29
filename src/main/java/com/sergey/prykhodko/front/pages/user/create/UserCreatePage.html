@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:wicket="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create User</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+           integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+           crossorigin="anonymous">
+</head>
+<body>
+    <form id="createForm" method="post" wicket:id="createForm">
+        <fieldset>
+            <table>
+                <tr>
+                    <td><span>Login: </span><input type="text" placeholder="Chose login"
+                                                   title="Should be longer than 3 letters"
+                                                   required pattern="^[A-Za-z0-9_]{3,25}$"
+                                                        wicket:id="login" /></td>
+                </tr>
+                <tr>
+                    <td><span>Password: </span><input type="password" placeholder="Chose password" required
+                                                      title="Password should have minimum 8 letters and minimum one number"
+                                                      pattern="^((?=.*\d)[A-Za-z\d]{8,}$"
+                                                       wicket:id="password" /></td>
+                </tr>
+                <tr>
+                    <td><span>Email: </span><input type="email" placeholder="Enter user e-mail"
+                                                   required title="Enter user e-mail address"
+                                                   pattern="^([\\w-.]+){1,64}@([\\w&&[^_]]+){2,255}.[a-z]{2,}$"
+                                                            wicket:id="email" /></td>
+                </tr>
+                <tr>
+                    <td><span>First Name: </span><input type="text" placeholder="Enter user's first name" required
+                                                       wicket:id="firstName" /></td>
+                </tr>
+                <tr>
+                    <td><span>Last Name: </span><input type="text" placeholder="Enter user's last name" required
+                                                        wicket:id="lastName" /></td>
+                </tr>
+            </table>
+            <input type="submit" value="CREATE" id="submit">
+        </fieldset>
+    </form>
+</body>
+</html>
